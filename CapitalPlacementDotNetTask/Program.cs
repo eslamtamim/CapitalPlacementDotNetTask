@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddEndpointsApiExplorer();
+
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello Capital Placement!");
+
+
+app.UseHttpsRedirection();
+app.Run();
+
