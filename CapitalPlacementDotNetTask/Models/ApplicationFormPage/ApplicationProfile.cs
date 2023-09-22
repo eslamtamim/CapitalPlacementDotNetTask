@@ -6,7 +6,7 @@
         public List<Education>? Education { get; set; }
         public List<Experience>? Experience { get; set; }
         public Resume? Resume { get; set; }
-        public List<QuestionDto>? Questions { get; set; }
+        public List<Question>? Questions { get; set; }
     }
 
     public record Education(string School, string Degree, string CourseName, string LocationOfStudy,

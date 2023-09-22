@@ -1,14 +1,10 @@
-﻿using AutoMapper;
-using CapitalPlacementDotNetTask.Data;
+﻿using CapitalPlacementDotNetTask.Data;
 using CapitalPlacementDotNetTask.Models.ApplecationFormPage;
-using CapitalPlacementDotNetTask.Models.ProgramDetailsPage;
-using CapitalPlacementDotNetTask.Models.WorkFlowPage;
-using CapitalPlacementDotNetTask.Validatiors;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using static CapitalPlacementDotNetTask.Models.ApplecationFormPage.QuestionDto;
-using static CapitalPlacementDotNetTask.Models.WorkFlowPage.Stage;
+using static CapitalPlacementDotNetTask.Models.ApplecationFormPage.Question;
+
 
 namespace CapitalPlacementDotNetTask.EndPoints
 {
@@ -59,7 +55,7 @@ namespace CapitalPlacementDotNetTask.EndPoints
 
         private static async ValueTask<object?> PUT_ApplicationFormFilter(EndpointFilterInvocationContext invocationContext, EndpointFilterDelegate @next)
         {
-            var questions = new List<QuestionDto>();
+            var questions = new List<Question>();
             questions.AddRange(invocationContext.GetArgument<ApplicationForm>(1).AdditionalQuestions!);
             foreach (var question in questions)
             {

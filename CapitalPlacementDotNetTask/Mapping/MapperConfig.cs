@@ -12,8 +12,7 @@ namespace CapitalPlacementDotNetTask.Mapping
         public MapperConfig()
         {
             CreateMap<AdditionalProgramInformation, AdditionalProgramInformationDto>().ReverseMap();
-            CreateMap<ProgramDetails, ProgramDetailsDto>().ReverseMap();
-           
+            CreateMap<ProgramDetails, ProgramDetailsDto>().ReverseMap();           
         }
 
     }

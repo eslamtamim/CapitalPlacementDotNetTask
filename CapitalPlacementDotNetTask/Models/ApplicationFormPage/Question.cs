@@ -2,7 +2,7 @@
 
 namespace CapitalPlacementDotNetTask.Models.ApplecationFormPage;
 
-public class QuestionDto
+public class Question
 {
 
     public enum QuestionType
