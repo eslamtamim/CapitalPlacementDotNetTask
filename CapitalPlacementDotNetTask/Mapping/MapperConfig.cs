@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using CapitalPlacementDotNetTask.Dtos.PreviewPageDTOs;
 using CapitalPlacementDotNetTask.Models.ApplecationFormPage;
-using CapitalPlacementDotNetTask.Models.PreviewPage;
 using CapitalPlacementDotNetTask.Models.ProgramDetailsPage;
 using System.Drawing;
 

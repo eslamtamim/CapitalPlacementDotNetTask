@@ -1,6 +1,6 @@
 ﻿using CapitalPlacementDotNetTask.Models.ProgramDetailsPage;
 
-namespace CapitalPlacementDotNetTask.Models.PreviewPage
+namespace CapitalPlacementDotNetTask.Dtos.PreviewPageDTOs
 {
     public class ProgramPreviewDto
     {

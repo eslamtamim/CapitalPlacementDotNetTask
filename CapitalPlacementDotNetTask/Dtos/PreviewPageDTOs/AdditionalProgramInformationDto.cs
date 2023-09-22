@@ -1,4 +1,4 @@
-﻿namespace CapitalPlacementDotNetTask.Models.PreviewPage
+﻿namespace CapitalPlacementDotNetTask.Dtos.PreviewPageDTOs
 {
     public class AdditionalProgramInformationDto
     {

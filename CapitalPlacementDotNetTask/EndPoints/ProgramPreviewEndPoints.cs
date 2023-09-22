@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CapitalPlacementDotNetTask.Data;
-using CapitalPlacementDotNetTask.Models.PreviewPage;
+using CapitalPlacementDotNetTask.Dtos.PreviewPageDTOs;
 
 namespace CapitalPlacementDotNetTask.EndPoints
 {
