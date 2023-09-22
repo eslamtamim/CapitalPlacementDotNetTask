@@ -1,8 +1,7 @@
-﻿namespace CapitalPlacementDotNetTask.Models;
+﻿namespace CapitalPlacementDotNetTask.Models.ProgramDetailsPage;
 
 public class ProgramDetails
 {
-
 
     public required string Title { get; set; }
     public string? Summary { get; set; }

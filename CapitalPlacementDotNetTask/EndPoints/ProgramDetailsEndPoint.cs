@@ -4,7 +4,7 @@ using CapitalPlacementDotNetTask.Models;
 using CapitalPlacementDotNetTask.Data;
 using FluentValidation;
 using AutoMapper;
-
+using CapitalPlacementDotNetTask.Models.ProgramDetailsPage;
 
 namespace CapitalPlacementDotNetTask.EndPoints;
 
@@ -26,7 +26,7 @@ public static class ProgramDetailsEndPoint
 
 
  
-    public static async Task<IResult> POST_Program([FromBody] ProgramDetails programDetails,
+    private static async Task<IResult> POST_Program([FromBody] ProgramDetails programDetails,
                                                           CosmosDataBaseContext _dbContext,
                                                           IValidator<ProgramDetails> validator)
     {
@@ -45,7 +45,7 @@ public static class ProgramDetailsEndPoint
     }
 
 
-    public static async Task<IResult> PUT_ProgramDetails(string id,[FromBody] ProgramDetails programDetails, CosmosDataBaseContext _dbContext, IValidator<ProgramDetails> validator)
+    private static async Task<IResult> PUT_ProgramDetails(string id,[FromBody] ProgramDetails programDetails, CosmosDataBaseContext _dbContext, IValidator<ProgramDetails> validator)
     {
         if (string.IsNullOrWhiteSpace(id)) return Results.BadRequest("Id is invalide");
 
@@ -62,7 +62,7 @@ public static class ProgramDetailsEndPoint
     }
 
 
-    public static async Task<IResult> GET_ProgramDetails(string id, CosmosDataBaseContext _dbContext)
+    private static async Task<IResult> GET_ProgramDetails(string id, CosmosDataBaseContext _dbContext)
     {
         if (string.IsNullOrWhiteSpace(id)) return Results.BadRequest("Id is invalide");
         
@@ -75,7 +75,7 @@ public static class ProgramDetailsEndPoint
     }
 
 
-    public static async Task<IResult> GET_Program(string id, CosmosDataBaseContext _dbContext)
+    private static async Task<IResult> GET_Program(string id, CosmosDataBaseContext _dbContext)
     {
         if (string.IsNullOrWhiteSpace(id)) return Results.BadRequest();
         var program = await _dbContext.Programs.FirstOrDefaultAsync(p => p.Id == id);
@@ -83,14 +83,12 @@ public static class ProgramDetailsEndPoint
     }
 
 
-    public static async Task<IResult> GET_Programs(CosmosDataBaseContext _dbContext)
+    private static async Task<IResult> GET_Programs(CosmosDataBaseContext _dbContext)
     {
         var programs = await _dbContext.Programs.ToListAsync();
         if (programs is null) return Results.NotFound();
         if (!programs.Any()) return Results.NoContent();
         return Results.Ok(programs);
     }
-
-  
 
 }

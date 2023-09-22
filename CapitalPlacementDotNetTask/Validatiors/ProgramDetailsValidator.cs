@@ -1,4 +1,4 @@
-﻿using CapitalPlacementDotNetTask.Models;
+﻿using CapitalPlacementDotNetTask.Models.ProgramDetailsPage;
 using FluentValidation;
 
 namespace CapitalPlacementDotNetTask.Validatiors;

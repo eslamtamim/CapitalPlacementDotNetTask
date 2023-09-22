@@ -1,4 +1,7 @@
-﻿namespace CapitalPlacementDotNetTask.Models;
+﻿using CapitalPlacementDotNetTask.Models.ApplecationFormPage;
+using CapitalPlacementDotNetTask.Models.ProgramDetailsPage;
+
+namespace CapitalPlacementDotNetTask.Models;
 
 public class ProgramModel
 {
@@ -7,5 +10,5 @@ public class ProgramModel
 
     public required ProgramDetails ProgramDetails { get; set; }
 
-
+    public ApplicationForm? ApplicationForm { get; set; }
 }
