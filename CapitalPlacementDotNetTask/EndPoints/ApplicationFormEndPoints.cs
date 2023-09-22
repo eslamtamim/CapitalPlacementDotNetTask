@@ -25,13 +25,9 @@ namespace CapitalPlacementDotNetTask.EndPoints
 
 
 
-        private static async Task<IResult> PUT_ApplicationForm(string id, [FromBody] ApplicationForm applicationForm, CosmosDataBaseContext _dbContext, IValidator<ApplicationForm> validator)
+        private static async Task<IResult> PUT_ApplicationForm(string id, [FromBody] ApplicationForm applicationForm, CosmosDataBaseContext _dbContext)
         {
-
-            var validationResult = await validator.ValidateAsync(applicationForm);
-            if (!validationResult.IsValid) return Results.BadRequest(validationResult.Errors);
-
-
+            
             var programModel = await _dbContext.Programs.FirstOrDefaultAsync(p => p.Id == id);
             if (programModel is null) return Results.NotFound("No Program Found With This Id");
 
