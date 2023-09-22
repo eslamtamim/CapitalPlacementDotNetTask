@@ -15,5 +15,5 @@ public class ProgramDetailsValidator : AbstractValidator<ProgramDetails>
         RuleFor(p => p.AdditionalProgramInformation.ProgramOpenDate).NotEmpty().WithMessage("Program open date is required");
         RuleFor(p => p.AdditionalProgramInformation.ProgramCloseDate).NotEmpty().WithMessage("Program end date is required");
         RuleFor(p => p.AdditionalProgramInformation.Location).NotEmpty().WithMessage("Location is required");
-    }
+   }
 }

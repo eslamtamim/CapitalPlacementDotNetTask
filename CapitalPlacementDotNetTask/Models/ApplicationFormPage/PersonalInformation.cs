@@ -12,7 +12,7 @@ public class PersonalInformation
     public IdNumber? IdNumber { get; set; }
     public DateOfBirth? DateOfBirth { get; set; }
     public Gender? Gender { get; set; }
-    public List<Question>? Questions { get; set; }
+    public List<QuestionDto>? Questions { get; set; }
 
 }
 

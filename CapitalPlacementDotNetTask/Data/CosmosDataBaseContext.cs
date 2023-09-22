@@ -16,6 +16,7 @@ public class CosmosDataBaseContext : DbContext
         modelBuilder.Entity<ProgramModel>().ToContainer("Programs").HasPartitionKey(p => p.Id);
         modelBuilder.Entity<ProgramModel>().OwnsOne(p=> p.ProgramDetails);
         modelBuilder.Entity<ProgramModel>().OwnsOne(p => p.ApplicationForm);
+        modelBuilder.Entity<ProgramModel>().OwnsOne(p=>p.WorkFlow);
     }
 
     public DbSet<ProgramModel> Programs { get; set; }

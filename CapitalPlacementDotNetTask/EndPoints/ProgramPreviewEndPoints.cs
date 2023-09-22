@@ -10,9 +10,7 @@ namespace CapitalPlacementDotNetTask.EndPoints
 
         public static void MapProgramPreviewEndPoint(this WebApplication app)
         {
-
             app.MapGet("/preview/{id:guid}", GET_ProgramPreview);
-
         }
 
         private static async Task<IResult> GET_ProgramPreview(string id, CosmosDataBaseContext _dbContext, IMapper mapper)
@@ -22,8 +20,8 @@ namespace CapitalPlacementDotNetTask.EndPoints
             if (programModel == null) return Results.NotFound("No Program found with this Id");
             var programPreviewDto = new ProgramPreviewDto
             {
-                programDetails = programModel.ProgramDetails,
-                AdditionalProgramInformationDto = mapper.Map<AdditionalProgramInformationDto>(programModel.ProgramDetails.AdditionalProgramInformation)
+                programDetails = mapper.Map<ProgramDetailsDto>(programModel.ProgramDetails),
+                AdditionalProgramInformation = mapper.Map<AdditionalProgramInformationDto>(programModel.ProgramDetails.AdditionalProgramInformation)
             };
 
             return Results.Ok(programPreviewDto);

@@ -6,7 +6,7 @@ namespace CapitalPlacementDotNetTask.Models.PreviewPage
     {
 
 
-        public required ProgramDetails programDetails { get; set; }
-        public AdditionalProgramInformationDto AdditionalProgramInformationDto { get; set; }
+        public required ProgramDetailsDto programDetails { get; set; }
+        public AdditionalProgramInformationDto AdditionalProgramInformation { get; set; }
     }
 }

@@ -7,6 +7,7 @@ public class AdditionalProgramInformation
     public required string Type { get; set; }
 
     public DateTime? ProgramStartDate { get; set; }
+    //Application
     public DateTime ProgramOpenDate { get; set; }
     public DateTime ProgramCloseDate { get; set; }
     public string? Duration { get; set; }

@@ -1,6 +1,8 @@
-﻿namespace CapitalPlacementDotNetTask.Models.ApplecationFormPage;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-public class Question
+namespace CapitalPlacementDotNetTask.Models.ApplecationFormPage;
+
+public class QuestionDto
 {
 
     public enum QuestionType
@@ -9,28 +11,8 @@ public class Question
         ShortAnswer,
         YESorNO,
         DropDown,
-        MultipuleChoice,
+        MultipleChoice,
         Date, Number, File, Video
-    }
-
-    public Question()
-    {
-        if (this.Type == QuestionType.MultipuleChoice)
-        {
-            this.Choices = new List<string>();
-            this.IsOtherOptionEnabled = false;
-            MaxAllowedChoices = 0;
-        }
-        if (this.Type == QuestionType.DropDown)
-        {
-            this.Choices = new List<string>();
-            this.IsOtherOptionEnabled = true;
-        }
-        if (this.Type == QuestionType.YESorNO)
-            DisqualifyWhenAnswerIsNo = true;
-
-        // the rest of the types doesn't need any initialization, just the QuestionText is enough
-
     }
 
     public QuestionType Type { get; set; }
@@ -41,38 +23,3 @@ public class Question
     public bool? DisqualifyWhenAnswerIsNo { get; set; }
 
 }
-
-
-
-//public class MultipuleChoiceQuestion : Question
-//{
-//    public MultipuleChoiceQuestion()
-//    {
-//        this.Type = QuestionType.MultipuleChoice;
-//    }
-//    public List<string>? Choices { get; set; }
-//    public int? MaxAllowedChoices { get; set; }
-//    public bool? IsOtherOptionEnabled { get; set; }
-//    public bool? DisqualifyWhenAnswerIsNo { get; set; }
-
-//}
-
-
-//public class DropDownQuestion : Question
-//{
-//    public DropDownQuestion()
-//    {
-//        this.Type = QuestionType.DropDown;
-//    }
-//    public List<string>? Choices { get; set; }
-//    public bool? IsOtherOptionEnabled { get; set; }
-//}
-
-//public class YesOrNOQuestion : Question
-//{
-//    public YesOrNOQuestion()
-//    {
-//        this.Type = QuestionType.YESorNO;
-//    }
-//    public bool? DisqualifyWhenAnswerIsNo { get; set; }
-//}

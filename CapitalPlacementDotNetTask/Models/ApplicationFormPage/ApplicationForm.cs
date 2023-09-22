@@ -6,7 +6,7 @@
         public string? CoverImage { get; set; }
         public PersonalInformation? PersonalInformation { get; set; } 
         public ApplicationProfile? ApplicationProfile { get; set; }
-        public List<Question>? AdditionalQuestions { get; set; } 
+        public List<QuestionDto>? AdditionalQuestions { get; set; } 
 
 
 

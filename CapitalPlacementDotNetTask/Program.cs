@@ -29,10 +29,16 @@ builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 var app = builder.Build();
 
-// mapping the endpoints of "Tap 1" [POST][GET][PUT].
+// mapping the endpoints of "Program - Tap 1" [POST][GET][PUT].
 app.MapProgramDetailsEndPoints();
+// mapping the endpoints of "Application Form - Tap 2" [GET][PUT].
 app.MapApplicationFormEndPoints();
+// mapping the endpoints of "Work Flow - Tap 3" [GET][PUT].
+app.MapWorkFlowEndPoints();
+// mapping the endpoints of "Preview - Tap 4" [GET].
 app.MapProgramPreviewEndPoint();
+
+
 
 app.UseHttpsRedirection();
 app.Run();
